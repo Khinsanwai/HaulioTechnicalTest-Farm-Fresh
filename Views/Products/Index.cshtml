@@ -1,0 +1,142 @@
+﻿@model IEnumerable<FarmProj.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+ <div class="container">
+          <div class="row">
+          <div class="col-md-3" style="background-color: #ecf0f1; ">
+            <h4>On Sales! <br /><br />
+                New <br /><br />
+                Shop by <br /><br />
+                Fruit & Veg<br /><br />
+                Meat & Seafood<br /><br />
+                Dairy and Chilled <br /><br />
+                Bakery<br /><br />
+                Beverages<br />   <br />
+            </h4>
+              </div>
+       
+
+        <div class="col-md-3" style="background-color:#f4f4f4;">
+            <br />
+            <img src="~/image/products/Untitled-1.png" alt="Untitled-1" width="50%" style="border-radius:25px"; />
+            <br />
+          <b>  Ripe Blue Grape<br />
+                Packet<br />
+            </b>
+            <br />
+            <img src="~/image/products/Untitled-5.png" alt="Untitled-5" width="50%" style="border-radius:25px" ; />
+            <br />
+            <b>
+                Capsicum<br />
+                Packet<br />
+            </b>
+
+        </div>
+        <div class="col-md-3" style="background-color:#f4f4f4;">
+            <br />
+            <img src="~/image/products/Untitled-2.png" alt="Untitled-2" width="50%" style="border-radius:25px" ; />
+            <br />
+            <b>
+                Spinach<br />
+                Packet<br />
+            </b>
+            <br />
+            <img src="~/image/products/Untitled-2.png" alt="Untitled-2" width="50%" style="border-radius:25px" ; />
+            <br />
+            <b>
+                Tomato<br />
+                Packet<br />
+            </b>
+        </div>
+        <div class="col-md-3" style="background-color:#f4f4f4;">
+            <br />
+            <img src="~/image/products/Untitled-3.png" alt="Untitled-7" width="50%" style="border-radius:25px" ; />
+            <br />
+            <b>
+                Salmon<br />
+                Packet<br />
+            </b>
+            <br />
+            <img src="~/image/products/Untitled-2.png" alt="Untitled-2" width="50%" style="border-radius:25px" ; />
+            <br />
+            <b>
+                Brocolli<br />
+                Packet<br />
+            </b>
+        </div>
+              </div>
+              </div>
+
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Qty)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrandID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Qty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Unit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
